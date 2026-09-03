@@ -5,9 +5,8 @@ class TicTacToe {
     string last_turn = "";
     string[,]? matrix = null;
     public void CreateMatrix(int height, int width) {
-    
-    string[,] newMatrix = new string[height,width];
-    matrix = newMatrix;
+        string[,] newMatrix = new string[height,width];
+        matrix = newMatrix;
     }
     public void Controller(params string[] actions) {
         if (matrix != null) {
