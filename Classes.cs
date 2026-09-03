@@ -20,6 +20,8 @@ class TicTacToe {
 
     public void Calculate() {
         for (var row = 0;row<matrix?.GetLength(0);row++) {
+            
+            int matrix_length_1 = matrix.GetLength(1);
             int count_row = 0;
             int count_column = 0;
             int count_diagonal_top = 0;
@@ -28,28 +30,29 @@ class TicTacToe {
             string? last_column_item = null;
             string? last_diagonal_top = null;
             string? last_diagonal_bottom = null;
-            for (int column = 0; column < matrix.GetLength(1); column++) {
+            
+            for (int column = 0; column < matrix_length_1; column++) {
                 
                 if (last_diagonal_top == null) { last_diagonal_top = matrix[0,0]; }
-                if (last_diagonal_bottom == null) { last_diagonal_bottom = matrix[matrix.GetLength(1)-1,0]; }
+                if (last_diagonal_bottom == null) { last_diagonal_bottom = matrix[matrix_length_1-1,0]; }
                 if (last_row_item == null) { last_row_item = matrix[row, column]; }
                 if (last_column_item == null) { last_column_item = matrix[column,row]; }
                 if (matrix[row, column] == last_row_item && matrix[row, column] != "-") { count_row++; } else { count_row = 0; }
                 if (matrix[column,row] == last_column_item && matrix[column,row] != "-") { count_column++; } else { count_column = 0; }
                 if (matrix[column, column] == last_diagonal_top && matrix[column, column] != "-") { count_diagonal_top++; } else { count_diagonal_top = 0; }
-                if (matrix[matrix.GetLength(1)-1-column, column] == last_diagonal_bottom && matrix[row, column] != "-") { count_diagonal_bottom++; } else { count_diagonal_bottom = 0; }
+                if (matrix[matrix_length_1-1-column, column] == last_diagonal_bottom && matrix[row, column] != "-") { count_diagonal_bottom++; } else { count_diagonal_bottom = 0; }
 
                 // Ritar upp rutan \o/
                 Console.Write(matrix[row, column].PadLeft(5));
 
-                if (count_row > matrix.GetLength(1)) { count_row = 0; }
-                else if (count_row == matrix.GetLength(1)) { playing = false; }
-                if (count_column > matrix.GetLength(1)) { count_column = 0; }
-                else if (count_column == matrix.GetLength(1)) { playing = false; }
-                if (count_diagonal_top > matrix.GetLength(1)) { count_diagonal_top = 0; }
-                else if (count_diagonal_top == matrix.GetLength(1)) { playing = false; }
-                if (count_diagonal_bottom > matrix.GetLength(1)) { count_diagonal_bottom = 0; }
-                else if (count_diagonal_bottom == matrix.GetLength(1)) { playing = false; }
+                if (count_row > matrix_length_1) { count_row = 0; }
+                else if (count_row == matrix_length_1) { playing = false; }
+                if (count_column > matrix_length_1) { count_column = 0; }
+                else if (count_column == matrix_length_1) { playing = false; }
+                if (count_diagonal_top > matrix_length_1) { count_diagonal_top = 0; }
+                else if (count_diagonal_top == matrix_length_1) { playing = false; }
+                if (count_diagonal_bottom > matrix_length_1) { count_diagonal_bottom = 0; }
+                else if (count_diagonal_bottom == matrix_length_1) { playing = false; }
             }
             Console.WriteLine("\n");
         }
