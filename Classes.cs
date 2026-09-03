@@ -39,7 +39,7 @@ class TicTacToe {
                 if (matrix[column, column] == last_diagonal_top && matrix[column, column] != "-") { count_diagonal_top++; } else { count_diagonal_top = 0; }
                 if (matrix[matrix.GetLength(1)-1-column, column] == last_diagonal_bottom && matrix[row, column] != "-") { count_diagonal_bottom++; } else { count_diagonal_bottom = 0; }
 
-                // Ritar upp rutan
+                // Ritar upp rutan \o/
                 Console.Write(matrix[row, column].PadLeft(5));
 
                 if (count_row > matrix.GetLength(1)) { count_row = 0; }
