@@ -51,7 +51,7 @@ class TicTacToe {
                 if (count_diagonal_bottom > matrix.GetLength(1)) { count_diagonal_bottom = 0; }
                 else if (count_diagonal_bottom == matrix.GetLength(1)) { playing = false; }
             }
-            Console.WriteLine();Console.WriteLine();
+            Console.WriteLine("\n");
         }
     }
     public void Start() {
