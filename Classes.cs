@@ -16,7 +16,7 @@ class TicTacToe {
                 if (actions[0] == "fill") { matrix[row,column] = actions[1]; }
             }
         }
-        } else { Console.WriteLine("Please use CreateMatrix(int height,int width) before using the MatrixController method");}
+        } else { Console.WriteLine("Please use CreateMatrix(int height,int width) before using the Controller method");}
     }
 
     public void Calculate() {
