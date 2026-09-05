@@ -10,7 +10,6 @@ class TicTacToe {
     }
     public void Controller(params string[] actions) {
         if (matrix != null) {
-<<<<<<< HEAD
             int val = 0;
         for (var row = 0;row<matrix?.GetLength(0);row++) {
             for (var column = 0;column<matrix.GetLength(1);column++) {
@@ -22,11 +21,6 @@ class TicTacToe {
                     int column_val = input_val % column_count;
                     matrix[row_val,column_val] = turn;
                 }
-=======
-        for (var row = 0;row<matrix?.GetLength(0);row++) {
-            for (var column = 0;column<matrix.GetLength(1);column++) {
-                if (actions[0] == "fill") { matrix[row,column] = actions[1]; }
->>>>>>> 12b17929152a18d2d13c85b8cba3486bff6aae64
             }
         }
         } else {Console.WriteLine("Please use CreateMatrix(int height,int width) before using the Controller method");}
@@ -80,16 +74,10 @@ class TicTacToe {
                 break;
             }
             Console.WriteLine($"Player {turn}'s tur att spela, välj rad och kolumn. Instruktion: rad,kolumn med siffror t. ex 1,2, använder array index så siffror mellan 0 och 2");
-<<<<<<< HEAD
+
             var userInput = Console.ReadLine();
             this.Controller("play", userInput);
-=======
-            var result = Console.ReadLine().Split(",");
-            var result_row = Convert.ToInt32(result[0]);
-            var result_column = Convert.ToInt32(result[1]);
-            matrix?[result_row,result_column] = turn;
 
->>>>>>> 12b17929152a18d2d13c85b8cba3486bff6aae64
             if (turn == "O") {
                 last_turn = "O";
                 turn = "X";
